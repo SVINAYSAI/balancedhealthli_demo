@@ -846,8 +846,10 @@
     }
 
     .team-photo {
-      height: 220px;
+      height: 260px;
       background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+      background-size: cover;
+      background-position: top center;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1056,13 +1058,16 @@
     }
 
     .team-full-photo {
-      height: 260px;
+      height: 300px;
       background: linear-gradient(160deg, var(--navy-mid), var(--navy-light));
+      background-size: cover;
+      background-position: top center;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 100px;
       position: relative;
+      overflow: hidden;
     }
 
     .team-full-overlay {
@@ -2664,7 +2669,7 @@
         right: 0;
         background: var(--navy);
         padding: 10px 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         border-bottom: 2px solid var(--mint);
         z-index: 1000;
       }
@@ -2683,7 +2688,9 @@
         display: block !important;
       }
 
-      .nav-cta, .nav-phone, .btn-book-nav {
+      .nav-cta,
+      .nav-phone,
+      .btn-book-nav {
         display: none !important;
       }
 
@@ -2699,7 +2706,7 @@
         display: block !important;
         margin-top: 20px;
       }
-      
+
       .hero-stats {
         flex-direction: column;
         gap: 20px;
@@ -2713,7 +2720,7 @@
         grid-template-columns: 1fr !important;
         gap: 40px;
       }
-      
+
       .steps-row::before {
         display: none !important;
       }
@@ -2859,15 +2866,15 @@
           <div class="hero-visual">
             <div
               style="position: relative; width: 100%; height: 500px; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-lg);">
-              <img src="assets/hero_bg.png" alt="Wellness Clinic" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="assets/rutman-staff-img.jpg" alt="Matthew Rutman, Founder & MD"
+                style="width: 100%; height: 100%; object-fit: cover; object-position: top center; image-rendering: -webkit-optimize-contrast;">
               <div class="hero-float-card top-right">
                 <div class="float-icon">⭐</div>
                 <div class="float-text"><strong>5.0 Rating</strong><span>200+ Google Reviews</span></div>
               </div>
               <div class="hero-float-card bottom-left">
                 <div class="float-icon">🩺</div>
-                <div class="float-text"><strong>Dr. Matthew Rutman, MD</strong><span>Board-Certified Physician</span>
-                </div>
+                <div class="float-text"><strong>Matthew Rutman, Founder & MD</strong></div>
               </div>
             </div>
           </div>
@@ -3130,16 +3137,20 @@
           </div>
           <div class="team-grid">
             <div class="team-card">
-              <div class="team-photo" style="background: url('assets/team1.png') center/cover; padding: 0;"></div>
+              <div class="team-photo"
+                style="background-image: url('assets/rutman-staff-img.jpg'); background-size: cover; background-position: top center;">
+              </div>
               <div class="team-info">
-                <div class="team-name">Matthew Rutman, MD</div>
-                <div class="team-title-badge">Board-Certified Physician</div>
+                <div class="team-name">Matthew Rutman, Founder & MD</div>
+                <div class="team-title-badge">Founder & Medical Director</div>
                 <div class="team-bio">20+ years as an emergency medicine physician. Takes a comprehensive, whole-body
                   approach to health optimization and longevity.</div>
               </div>
             </div>
             <div class="team-card">
-              <div class="team-photo" style="background: url('assets/team2.png') center/cover; padding: 0;"></div>
+              <div class="team-photo"
+                style="background-image: url('assets/Neeta.jpg'); background-size: cover; background-position: top center;">
+              </div>
               <div class="team-info">
                 <div class="team-name">Neeta Mitchell, RN</div>
                 <div class="team-title-badge">Registered Nurse</div>
@@ -3148,7 +3159,9 @@
               </div>
             </div>
             <div class="team-card">
-              <div class="team-photo" style="background: url('assets/team3.png') center/cover; padding: 0;"></div>
+              <div class="team-photo"
+                style="background-image: url('assets/brianna.webp'); background-size: cover; background-position: top center;">
+              </div>
               <div class="team-info">
                 <div class="team-name">Brianna Mulqueen, PA</div>
                 <div class="team-title-badge">Physician Assistant</div>
@@ -3300,9 +3313,10 @@
         </div>
         <div class="team-full-grid">
           <div class="team-full-card">
-            <div class="team-full-photo" style="background: url('assets/team1.png') center/cover; padding: 0;">
+            <div class="team-full-photo"
+              style="background-image: url('assets/founder.jpeg'); background-size: cover; background-position: top center;">
               <div class="team-full-overlay">
-                <div class="team-full-overlay-name">Matthew Rutman, MD</div>
+                <div class="team-full-overlay-name">Matthew Rutman, Founder & MD</div>
                 <div class="team-full-overlay-cred">Founder & Medical Director</div>
               </div>
             </div>
@@ -3319,7 +3333,8 @@
             </div>
           </div>
           <div class="team-full-card">
-            <div class="team-full-photo" style="background: url('assets/team2.png') center/cover; padding: 0;">
+            <div class="team-full-photo"
+              style="background-image: url('assets/Neeta.jpg'); background-size: cover; background-position: top center;">
               <div class="team-full-overlay">
                 <div class="team-full-overlay-name">Neeta Mitchell, RN</div>
                 <div class="team-full-overlay-cred">Co-Founder & Lead Nurse</div>
@@ -3338,7 +3353,8 @@
             </div>
           </div>
           <div class="team-full-card">
-            <div class="team-full-photo" style="background: url('assets/team3.png') center/cover; padding: 0;">
+            <div class="team-full-photo"
+              style="background-image: url('assets/brianna.webp'); background-size: cover; background-position: top center;">
               <div class="team-full-overlay">
                 <div class="team-full-overlay-name">Brianna Mulqueen, PA</div>
                 <div class="team-full-overlay-cred">Physician Assistant</div>
@@ -3446,26 +3462,26 @@
             <div class="wizard-step-title">Choose Your Provider</div>
             <div class="wizard-step-sub">Who would you like to see?</div>
             <div class="doctor-select-grid">
-              <div class="doc-option" onclick="selectDoc('Dr. Matthew Rutman','MD')">
+              <div class="doc-option" onclick="selectDoc('Matthew Rutman','Founder & MD')">
                 <div
-                  style="width: 64px; height: 64px; border-radius: 50%; background: url('assets/team1.png') center/cover; margin: 0 auto 12px; box-shadow: var(--shadow);">
+                  style="width: 80px; height: 80px; border-radius: 50%; background-image: url('assets/founder.jpeg'); background-size: cover; background-position: top center; margin: 0 auto 12px; box-shadow: var(--shadow);">
                 </div>
-                <div class="doc-option-name">Dr. Matthew Rutman</div>
-                <div class="doc-option-cred">MD · Founder</div>
+                <div class="doc-option-name">Matthew Rutman</div>
+                <div class="doc-option-cred">Founder & MD</div>
               </div>
               <div class="doc-option" onclick="selectDoc('Neeta Mitchell','RN')">
                 <div
-                  style="width: 64px; height: 64px; border-radius: 50%; background: url('assets/team2.png') center/cover; margin: 0 auto 12px; box-shadow: var(--shadow);">
+                  style="width: 80px; height: 80px; border-radius: 50%; background-image: url('assets/Neeta.jpg'); background-size: cover; background-position: top center; margin: 0 auto 12px; box-shadow: var(--shadow);">
                 </div>
                 <div class="doc-option-name">Neeta Mitchell</div>
-                <div class="doc-option-cred">RN · Co-Founder</div>
+                <div class="doc-option-cred">RN</div>
               </div>
               <div class="doc-option" onclick="selectDoc('Brianna Mulqueen','PA')">
                 <div
-                  style="width: 64px; height: 64px; border-radius: 50%; background: url('assets/team3.png') center/cover; margin: 0 auto 12px; box-shadow: var(--shadow);">
+                  style="width: 80px; height: 80px; border-radius: 50%; background-image: url('assets/brianna.webp'); background-size: cover; background-position: top center; margin: 0 auto 12px; box-shadow: var(--shadow);">
                 </div>
                 <div class="doc-option-name">Brianna Mulqueen</div>
-                <div class="doc-option-cred">PA · Specialist</div>
+                <div class="doc-option-cred">PA</div>
               </div>
             </div>
             <div class="wizard-nav"><button class="btn-back" onclick="goStep(1)">← Back</button><button class="btn-next"
