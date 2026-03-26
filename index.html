@@ -2645,38 +2645,90 @@
     }
 
     /* Responsive */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
     @media (max-width: 900px) {
       .nav-tabs {
-        display: none;
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--navy);
+        padding: 10px 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border-bottom: 2px solid var(--mint);
+        z-index: 1000;
+      }
+
+      .nav-tab {
+        padding: 12px;
+        font-size: 16px;
+      }
+
+      .nav-tabs.open {
+        display: flex !important;
+        animation: fadeSlideIn 0.3s ease;
+      }
+
+      .mobile-menu-btn {
+        display: block !important;
+      }
+
+      .nav-cta, .nav-phone, .btn-book-nav {
+        display: none !important;
       }
 
       .hero-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+      }
+
+      .hero-title {
+        font-size: clamp(32px, 8vw, 40px) !important;
       }
 
       .hero-visual {
-        display: none;
+        display: block !important;
+        margin-top: 20px;
+      }
+      
+      .hero-stats {
+        flex-direction: column;
+        gap: 20px;
       }
 
       .services-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr !important;
       }
 
       .steps-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 40px;
+      }
+      
+      .steps-row::before {
+        display: none !important;
       }
 
       .team-grid,
       .team-full-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr !important;
       }
 
       .svc-detail-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
       }
 
       .contact-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
       }
 
       .chat-window {
@@ -2685,11 +2737,31 @@
       }
 
       .doctor-select-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr !important;
+      }
+
+      .select-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .body-area-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+
+      .symptom-checkboxes {
+        grid-template-columns: 1fr !important;
+      }
+
+      .time-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
       }
 
       .form-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+      }
+
+      .wizard-card {
+        padding: 20px 14px !important;
       }
     }
   </style>
@@ -2719,6 +2791,7 @@
         <div class="nav-phone"><span>📞</span> (631) 600-7950</div>
         <button class="btn-book-nav" onclick="showTab('booking')">Book Now</button>
       </div>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
     </div>
   </nav>
 
@@ -3776,6 +3849,11 @@
   JAVASCRIPT
 ════════════════════════════════ -->
   <script>
+    /* ── MOBILE MENU ── */
+    function toggleMenu() {
+      document.querySelector('.nav-tabs').classList.toggle('open');
+    }
+
     /* ── TAB SYSTEM ── */
     function showTab(tab) {
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
@@ -3784,6 +3862,8 @@
       const tabs = ['home', 'services', 'team', 'booking', 'symptom', 'contact'];
       const idx = tabs.indexOf(tab);
       if (idx > -1) document.querySelectorAll('.nav-tab')[idx].classList.add('active');
+      const navTabs = document.querySelector('.nav-tabs');
+      if (navTabs) navTabs.classList.remove('open');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
